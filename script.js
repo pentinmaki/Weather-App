@@ -6,7 +6,10 @@ function getWeather() {
       if (data.cod === 200) {
         document.getElementById("result").innerHTML = `
           <h2>${data.name}</h2>
-          <p>${data.weather[0].description}</p>
+          <p>
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather icon">
+            ${data.weather[0].description}
+            </p>
           <p>🌡 ${data.main.temp}°C</p>
         `;
       } else {
